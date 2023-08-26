@@ -57,6 +57,9 @@ body {
     min-height: 200px;
     padding: 1vw;
     border-radius: 15px 40px 15px 40px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 
