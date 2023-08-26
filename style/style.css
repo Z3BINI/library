@@ -45,13 +45,15 @@ body {
     position:relative;
     z-index: 3;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 25vw));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 20vw));
     gap: 1vw;
 }
 
 .book-card {
     background-color: #E0FF4F;
     color:#2E3532;
+    height: 25vw;
+    min-height: 400px;
 }
 
 
