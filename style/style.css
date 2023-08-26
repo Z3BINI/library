@@ -10,13 +10,13 @@ body {
 }
 
 .header {
-    background-color: red;
+    background-color: #00272B;
 }
 
 .content {
-    background-color: blue;
+    background-color: #6EA4BF;
 }
 
 .footer {
-    background-color: red;
+    background-color: #00272B;
 }
