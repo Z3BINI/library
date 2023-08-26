@@ -8,7 +8,7 @@
 
 body {
     display: grid;
-    grid-template: 15vh 75vh 10vh / minmax(320px, 100vw);
+    grid-template: 15vh 80vh 5vh / minmax(320px, 100vw);
 }
 
 .header {
