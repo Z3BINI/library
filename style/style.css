@@ -55,6 +55,8 @@ body {
     color:#2E3532;
     height: 20vw;
     min-height: 200px;
+    padding: 1vw;
+    border-radius: 15px 40px 15px 40px;
 }
 
 
