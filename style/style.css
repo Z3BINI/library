@@ -37,6 +37,10 @@ body {
     background-color: #6EA4BF;
 }
 
+.book-grid {
+    margin: 10px;
+}
+
 .footer {
     background-color: #00272B;
 
