@@ -14,7 +14,9 @@ body {
 .header {
     background-color: #00272B;
     box-shadow: 0px 15px 30px black;
-    z-index: 1;
+    z-index: 2;
+
+    position:relative;
 
     display: flex;
     justify-content: flex-end;
@@ -34,12 +36,21 @@ body {
 }
 
 .content {
+
+    position:relative;
     background-color: #6EA4BF;
 }
 
 .book-grid {
     margin: 10px;
+    position:relative;
+    z-index: 3;
 }
+
+.book-card {
+    background-color: #E0FF4F;
+}
+
 
 .footer {
     background-color: #00272B;
