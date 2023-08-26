@@ -45,7 +45,7 @@ body {
     position:relative;
     z-index: 3;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 25vw));
     gap: 1vw;
 }
 
