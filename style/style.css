@@ -85,10 +85,21 @@ body {
 
 .optns-row > button {
     flex: 1 1 45%;
-    min-width: 94px;
+    min-width: 100px;
+    border: none;
+    background-color:#656565;
+    color: white;
+    padding: 5px;
+    border-radius: 15px;
 }
 
+button.del {
+    background-color: #E4572E;
+}
 
+button.read {
+    background-color: #06A77D;
+}
 
 .footer {
     background-color: #00272B;
