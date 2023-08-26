@@ -48,6 +48,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(155px, 15vw));
     gap: 1vw;
+    justify-content: center;
 }
 
 .book-card {
