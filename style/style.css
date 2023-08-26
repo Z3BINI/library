@@ -72,6 +72,14 @@ body {
     overflow-y: auto;
 }
 
+.book-info > .title {
+    font-size: 1.5rem;
+}
+
+.book-info > .title {
+    font-size: 1.5rem;
+}
+
 hr {
     border: 0;
     height: 2px;
