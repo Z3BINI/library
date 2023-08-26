@@ -10,6 +10,7 @@ body {
     grid-template: 15fr 80fr 5fr / minmax(320px, 100vw);
     color: white;
     min-height: 100vh;
+    min-width: 320px;
 }
 
 .header {
@@ -54,8 +55,8 @@ body {
 .book-card {
     background-color: #E0FF4F;
     color:#2E3532;
-    height: 20vw;
-    min-height: 270px;
+    height: fit-content;
+    max-height: 400px;
     padding: 1vw 1vw 2vw 1vw;
     border-radius: 15px 40px 15px 40px;
 
