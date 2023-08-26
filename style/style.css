@@ -63,6 +63,31 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+/*
+.book-card > .book-info {
+
+}
+*/
+.book-card > .optns {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.optns > .optns-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
+    flex-wrap: wrap;
+}
+
+.optns-row > button {
+    flex: 1 1 45%;
+    min-width: 94px;
+}
+
 
 
 .footer {
