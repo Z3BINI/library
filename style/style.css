@@ -37,4 +37,8 @@ body {
 
 .footer {
     background-color: #00272B;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
