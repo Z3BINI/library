@@ -13,6 +13,22 @@ body {
 
 .header {
     background-color: #00272B;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo > img {
+    width: 50px;
+    height: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 2vw;
 }
 
 .content {
