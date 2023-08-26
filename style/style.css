@@ -7,8 +7,9 @@
 
 body {
     display: grid;
-    grid-template: 15vh 80vh 5vh / minmax(320px, 100vw);
+    grid-template: 15fr 80fr 5fr / minmax(320px, 100vw);
     color: white;
+    min-height: 100vh;
 }
 
 .header {
