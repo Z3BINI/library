@@ -9,7 +9,7 @@ const myLibrary = [
         isRead: false,
         img: ''
     }, {
-        id: 1,
+        id: 2,
         title: 'Ulisses',
         author: 'John Doe',
         currentPage: 102,
@@ -35,7 +35,7 @@ function addBookToLibrary() {
 
 }
 
-myLibrary.forEach(function(book){
+function createBookDOM(book){
 
     //Creating elements, setting classes/ID/content & appending to father elements START
 
@@ -126,4 +126,7 @@ myLibrary.forEach(function(book){
     //optnsRows Children END
 
     //Creating elements, setting classes/ID/content & appending to father elements END
-});
+}
+
+myLibrary.forEach((book) => createBookDOM(book));
+
