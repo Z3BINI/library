@@ -7,6 +7,17 @@
 
 dialog {
     z-index: 5;
+    width: 50vw;
+    min-width: 320px;
+    height: 80vh;
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .wrapper {
@@ -29,7 +40,7 @@ dialog {
     align-items: center;
 }
 
-.logo > img, .add-book > img {
+.logo > img, .add-book > img, .form-title > img {
     width: 50px;
     height: auto;
 }
