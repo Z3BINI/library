@@ -1,26 +1,14 @@
 const bookGrid = document.querySelector('.book-grid');
+
 const addBookBtn = document.querySelector('.add-book');
 const newBookForm = document.querySelector('dialog');
+const newBookFormBtns = document.querySelectorAll('.form-row-btns > button');
+
 const contentWrapper = document.querySelector('.wrapper');
+
 const myLibrary = [
     {
         id: 1,
-        title: 'Ulisses',
-        author: 'John Doe',
-        currentPage: 102,
-        maxPage: 233,
-        isRead: false,
-        img: ''
-    }, {
-        id: 2,
-        title: 'Ulisses',
-        author: 'John Doe',
-        currentPage: 102,
-        maxPage: 233,
-        isRead: false,
-        img: ''
-    }, {
-        id: 3,
         title: 'Ulisses',
         author: 'John Doe',
         currentPage: 102,
@@ -32,10 +20,24 @@ const myLibrary = [
 
 addBookBtn.addEventListener('click', showNewBookForm);
 
-function showNewBookForm() {
+newBookFormBtns.forEach(formBtn => {
+    formBtn.addEventListener('click', (event) => {
 
+        if (event.target.value === 'cancel') closeNewBookForm(event);
+
+        console.log(e.target.value);
+    });
+});
+
+function showNewBookForm() {
     newBookForm.showModal();
     contentWrapper.classList.toggle('blurred');
+}
+
+function closeNewBookForm(event) {
+    event.preventDefault();
+    contentWrapper.classList.toggle('blurred');
+    newBookForm.close();
 }
 
 function Book(title, author, currentPage, maxPage, isRead, img) {
