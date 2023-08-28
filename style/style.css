@@ -46,6 +46,18 @@ dialog {
     justify-content: space-between;
 }
 
+.dialog-content .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.controls > .form-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 .dialog-content .form-row-btns {
     display: flex;
     justify-content: center;
@@ -70,6 +82,7 @@ dialog {
 
 input {
     border: none;
+    height: 20px;
     width: 200px;
 }
 
