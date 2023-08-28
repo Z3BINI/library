@@ -2,32 +2,16 @@ const bookGrid = document.querySelector('.book-grid');
 
 const addBookBtn = document.querySelector('.add-book');
 const newBookForm = document.querySelector('dialog');
-const newBookFormBtns = document.querySelectorAll('.form-row-btns > button');
+const newBookFormCancel = document.querySelector('button[value="cancel"]');
+const newBookFormSave = document.querySelector('button[value="send"]');
 
 const contentWrapper = document.querySelector('.wrapper');
 
-const myLibrary = [
-    {
-        id: 1,
-        title: 'Ulisses',
-        author: 'John Doe',
-        currentPage: 102,
-        maxPage: 233,
-        isRead: false,
-        img: ''
-    }
-];
+const myLibrary = [];
 
 addBookBtn.addEventListener('click', showNewBookForm);
-
-newBookFormBtns.forEach(formBtn => {
-    formBtn.addEventListener('click', (event) => {
-
-        if (event.target.value === 'cancel') closeNewBookForm(event);
-
-        console.log(e.target.value);
-    });
-});
+newBookFormCancel.addEventListener('click', (event) => closeNewBookForm(event));
+newBookForm.addEventListener('submit', getBookFromForm);
 
 function showNewBookForm() {
     newBookForm.showModal();
@@ -40,20 +24,47 @@ function closeNewBookForm(event) {
     newBookForm.close();
 }
 
-function Book(title, author, currentPage, maxPage, isRead, img) {
+function getBookFromForm() {
+    contentWrapper.classList.toggle('blurred');
+
+    const inputs = document.querySelectorAll('.form-row > input');
+
+    const bookPlaceHolder = [];
+
+    inputs.forEach(input => {
+        if (input.type === 'checkbox') {
+            bookPlaceHolder.push(input.checked);
+        } else {
+            bookPlaceHolder.push(input.value);
+        } 
+    });
+
+    addBookToLibrary(bookPlaceHolder);
+    clearBookForm();
+}
+
+function addBookToLibrary(bookArr) {
+    myLibrary.push(new Book(bookArr[0], bookArr[1], bookArr[2], bookArr[3], bookArr[4], bookArr[5]));
+    myLibrary.forEach((book) => createBookDOM(book));
+}
+
+function clearBookForm() {
+    const inputs = document.querySelectorAll('.form-row > input');
+
+    inputs.forEach(input => {
+        if (input.type === 'checkbox') input.checked = false;
+        input.value = null;
+    });
+}
+
+function Book(title, author, maxPage, isRead = false, currentPage = 0, img = '') {
     this.id = myLibrary.length;
     this.title = title;
     this.author = author;
     this.currentPage = currentPage;
     this.maxPage = maxPage;
     this.isRead = isRead;
-    this.img = img ?? '';
-}
-
-
-
-function addBookToLibrary() {
-
+    this.img = img;
 }
 
 function createBookDOM(book){
@@ -149,5 +160,4 @@ function createBookDOM(book){
     //Creating elements, setting classes/ID/content & appending to father elements END
 }
 
-myLibrary.forEach((book) => createBookDOM(book));
 
