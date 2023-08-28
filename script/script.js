@@ -4,14 +4,20 @@ const addBookBtn = document.querySelector('.add-book');
 const newBookForm = document.querySelector('dialog');
 const newBookFormCancel = document.querySelector('button[value="cancel"]');
 const newBookFormSave = document.querySelector('button[value="send"]');
+const haveRead = document.querySelector('#have-read');
+const currPage = document.querySelector('#current-page');
 
 const contentWrapper = document.querySelector('.wrapper');
 
 const myLibrary = [];
 
+haveRead.addEventListener('change', (event) => disableCurrentPageIfRead(event.target.checked));
+
 addBookBtn.addEventListener('click', showNewBookForm);
 newBookFormCancel.addEventListener('click', (event) => closeNewBookForm(event));
 newBookForm.addEventListener('submit', getBookFromForm);
+
+const disableCurrentPageIfRead = (isChecked) => (isChecked) ? currPage.disabled = true : currPage.disabled = false;
 
 function showNewBookForm() {
     newBookForm.showModal();
