@@ -127,6 +127,11 @@ function createBookDOM(book){
     let optns = document.createElement('div');
     optns.classList.add('optns');
 
+    if (book.img) {
+        bookCard.setAttribute('style', `background-image: url("${book.img}"); background-size: 100% 100%;`);
+        bookInfo.setAttribute('style', 'background-color: rgba(255,255,255,0.8); border-radius: 5px; padding: 5px;');
+    }
+
     bookCard.appendChild(bookInfo);
     bookCard.appendChild(optns);
     //Fathers END
