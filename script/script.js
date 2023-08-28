@@ -1,4 +1,7 @@
 const bookGrid = document.querySelector('.book-grid');
+const addBookBtn = document.querySelector('.add-book');
+const newBookForm = document.querySelector('dialog');
+const contentWrapper = document.querySelector('.wrapper');
 const myLibrary = [
     {
         id: 1,
@@ -16,8 +19,24 @@ const myLibrary = [
         maxPage: 233,
         isRead: false,
         img: ''
+    }, {
+        id: 3,
+        title: 'Ulisses',
+        author: 'John Doe',
+        currentPage: 102,
+        maxPage: 233,
+        isRead: false,
+        img: ''
     }
 ];
+
+addBookBtn.addEventListener('click', showNewBookForm);
+
+function showNewBookForm() {
+
+    newBookForm.showModal();
+    contentWrapper.classList.toggle('blurred');
+}
 
 function Book(title, author, currentPage, maxPage, isRead, img) {
     this.id = myLibrary.length;
