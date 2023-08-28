@@ -57,6 +57,20 @@ function addBookToLibrary(bookArr) {
 function updateGrid() {
     bookGrid.innerHTML = ''; //Clear Grid from previously created DOM elements
     myLibrary.forEach((book) => createBookDOM(book));
+
+    const cardBtns = document.querySelectorAll('.optns button');
+
+    cardBtns.forEach(cardBtn => {
+        cardBtn.addEventListener('click', (event) => cardBtnsControl(event.target.parentElement.parentElement.parentElement.id, event.target.className));
+    });
+}
+
+function cardBtnsControl(id, action) {
+    if (action === 'add-page') myLibrary[id].addCurrentPage();
+    if (action === 'remove-page') myLibrary[id].subCurrentPage();
+    if (action === 'del') myLibrary[id].deleteBook(id);
+    if (action === 'read') myLibrary[id].toggleRead();
+    updateGrid();
 }
 
 function clearBookForm() {
@@ -69,14 +83,30 @@ function clearBookForm() {
     });
 }
 
-function Book(title, author, maxPage, isRead = false, currentPage = 0, img = '') {
+function Book(title, author, maxPage, isRead, currentPage, img) {
     this.id = myLibrary.length;
     this.title = title;
     this.author = author;
     this.currentPage = currentPage;
-    this.maxPage = maxPage;
+    if (this.currentPage === '') this.currentPage = 0;
+    this.maxPage = +maxPage;
     this.isRead = isRead;
     this.img = img;
+}
+
+Book.prototype.addCurrentPage = function() {
+    if (this.currentPage === this.maxPage) this.currentPage = 0;
+    this.currentPage++;
+}
+Book.prototype.subCurrentPage = function() { 
+    if (this.currentPage === 0) this.currentPage = this.maxPage;
+    this.currentPage--;
+}
+Book.prototype.toggleRead = function() { 
+    return (this.isRead) ? this.isRead = false : this.isRead = true;
+}
+Book.prototype.deleteBook = function(id) { 
+    delete myLibrary[id];
 }
 
 function createBookDOM(book){
@@ -112,7 +142,7 @@ function createBookDOM(book){
 
     let pages = document.createElement('p');
     pages.classList.add('pages');
-    if (!book.currentPage) {
+    if ((book.currentPage === book.maxPage || book.isRead === true)) { 
         pages.innerText = `Finished book!`;
     } else {
         pages.innerText = `Currently on page ${book.currentPage} of ${book.maxPage}.`;
