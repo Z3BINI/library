@@ -45,6 +45,7 @@ function getBookFromForm() {
 
 function addBookToLibrary(bookArr) {
     myLibrary.push(new Book(bookArr[0], bookArr[1], bookArr[2], bookArr[3], bookArr[4], bookArr[5]));
+    bookGrid.innerHTML = ''; //Clear Grid from previously created DOM elements
     myLibrary.forEach((book) => createBookDOM(book));
 }
 
