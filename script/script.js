@@ -61,6 +61,7 @@ function clearBookForm() {
     inputs.forEach(input => {
         if (input.type === 'checkbox') input.checked = false;
         input.value = null;
+        input.disabled = false;
     });
 }
 
@@ -107,7 +108,11 @@ function createBookDOM(book){
 
     let pages = document.createElement('p');
     pages.classList.add('pages');
-    pages.innerText = `Currently on page ${book.currentPage} of ${book.maxPage}.`;
+    if (!book.currentPage) {
+        pages.innerText = `Finished book!`;
+    } else {
+        pages.innerText = `Currently on page ${book.currentPage} of ${book.maxPage}.`;
+    }
 
     bookInfo.appendChild(title);
     bookInfo.appendChild(author);
