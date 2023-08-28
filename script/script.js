@@ -113,7 +113,7 @@ function createBookDOM(book){
     optns.appendChild(hr);
 
     let optnRows = [];
-    for (let i = 1; i < 4; i++) {
+    for (let i = 1; i < 3; i++) {
         optnRows[i] = document.createElement('div');
         optnRows[i].classList.add('optns-row');
 
@@ -148,11 +148,6 @@ function createBookDOM(book){
                 btns[i].classList.add('del');
                 btns[i].innerText = 'Delete book';
                 optnRows[2].appendChild(btns[i]);
-                break;
-            case 5: 
-                btns[i].classList.add('edit');
-                btns[i].innerText = 'Edit';
-                optnRows[3].appendChild(btns[i]);
                 break;
         }
     }
