@@ -38,7 +38,7 @@
                         
                     <div class="form-row">
                         <label for="have-read">Have read it:</label>
-                        <input type="radio" id="have-read" name="have-read" required> 
+                        <input type="checkbox" id="have-read" name="have-read" required> 
                     </div>
 
                     <div class="form-row">
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="form-row">
-                        <label for="img-url">Book cover image:</label>
+                        <label for="img-url">Cover image (url):</label>
                         <input type="url" id="img-url" name="img-url">
                     </div>
 
@@ -56,8 +56,8 @@
                 <div class="submit-form">
 
                     <div class="form-row-btns">
-                        <button type="submit">Add book</button>
-                        <button formmethod="dialog">Cancel</button>
+                        <button type="submit" formmethod="dialog" value="send">Add book</button>
+                        <button type="submit" formmethod="dialog" value="cancel">Cancel</button>
                     </div>
 
                 </div>
