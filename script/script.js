@@ -83,30 +83,37 @@ function clearBookForm() {
     });
 }
 
-function Book(title, author, maxPage, isRead, currentPage, img) {
-    this.id = myLibrary.length;
-    this.title = title;
-    this.author = author;
-    this.currentPage = currentPage;
-    if (this.currentPage === '') this.currentPage = 0;
-    this.maxPage = +maxPage;
-    this.isRead = isRead;
-    this.img = img;
-}
+class Book {
 
-Book.prototype.addCurrentPage = function() {
-    if (this.currentPage === this.maxPage) this.currentPage = 0;
-    this.currentPage++;
-}
-Book.prototype.subCurrentPage = function() { 
-    if (this.currentPage === 0) this.currentPage = this.maxPage;
-    this.currentPage--;
-}
-Book.prototype.toggleRead = function() { 
-    return (this.isRead) ? this.isRead = false : this.isRead = true;
-}
-Book.prototype.deleteBook = function(id) { 
-    delete myLibrary[id];
+    constructor(title, author, maxPage, isRead, currentPage, img) {
+        this.id = myLibrary.length;
+        this.title = title;
+        this.author = author;
+        this.currentPage = currentPage;
+        if (this.currentPage === '') this.currentPage = 0;
+        this.maxPage = +maxPage;
+        this.isRead = isRead;
+        this.img = img;
+    }
+
+    addCurrentPage() {
+        if (this.currentPage === this.maxPage) this.currentPage = 0;
+        this.currentPage++;
+    }
+
+    subCurrentPage() {
+        if (this.currentPage === 0) this.currentPage = this.maxPage;
+        this.currentPage--;
+    }
+
+    toggleRead() {
+        return (this.isRead) ? this.isRead = false : this.isRead = true;
+    }
+
+    deleteBook(id) {
+        delete myLibrary[id];
+    }
+    
 }
 
 function createBookDOM(book){
